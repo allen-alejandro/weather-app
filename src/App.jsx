@@ -1,17 +1,9 @@
 import React from 'react';
 import { hot } from 'react-hot-loader/root';
-import Button from '@material-ui/core/Button';
+import Search from './components/Search/Search.jsx';
 
-class App extends React.Component {
-  render() {
-    const { name } = this.props;
-    return (
-      <>
-        <h1>Hello {name}</h1>
-        <Button variant='contained'>this is a material UI button</Button>
-      </>
-    );
-  }
-}
+const App = () => {
+  return <Search />;
+};
 
 export default hot(App);
