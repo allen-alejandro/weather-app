@@ -1,12 +1,16 @@
-import React, { Component, useState } from 'react';
+import React from 'react';
+import { useRecoilState } from 'recoil';
+import { zipCode as zipCodeAtom } from '../../atoms/zipCode.jsx';
 import { MenuItem, TextField, Button, Box, Paper } from '@material-ui/core';
 
 const Search = () => {
-  const [location, setLocation] = useState('');
+  const [zipCode, setZipCode] = useRecoilState(zipCodeAtom);
 
   const onSubmit = (e) => {
     e.preventDefault();
-    if (!location || location === '') return;
+    if (!zipCode || zipCode === '') return;
+    console.log(zipCode, '<<<<<<<');
+    setZipCode('');
   };
 
   return (
@@ -24,8 +28,8 @@ const Search = () => {
             id='zip-code'
             label='Zip Code'
             variant='filled'
-            onChange={(e) => setLocation(e.target.value)}
-            value={location}
+            onChange={(e) => setZipCode(e.target.value)}
+            value={zipCode}
           />
           <Button variant='contained' onClick={onSubmit}>
             Submit
