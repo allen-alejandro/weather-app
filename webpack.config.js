@@ -1,4 +1,5 @@
 const webpack = require('webpack');
+const Dotenv = require('dotenv-webpack');
 const path = require('path');
 
 const config = {
@@ -30,6 +31,12 @@ const config = {
     },
     compress: true,
     port: 3000,
+  },
+  plugins: [new Dotenv()],
+  resolve: {
+    alias: {
+      'react-dom': '@hot-loader/react-dom',
+    },
   },
 };
 
