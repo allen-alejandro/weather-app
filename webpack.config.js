@@ -33,6 +33,11 @@ const config = {
     port: 3000,
   },
   plugins: [new Dotenv()],
+  resolve: {
+    alias: {
+      'react-dom': '@hot-loader/react-dom',
+    },
+  },
 };
 
 module.exports = config;

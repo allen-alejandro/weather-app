@@ -1,14 +1,22 @@
 import React from 'react';
-import { hot } from 'react-hot-loader/root';
 import { RecoilRoot } from 'recoil';
+import { QueryClient, QueryClientProvider } from 'react-query';
+import { ReactQueryDevtools } from 'react-query/devtools';
 import Search from './components/Search/Search.jsx';
+import Weather from './components/Weather.jsx/WeatherList.jsx';
+
+const queryClient = new QueryClient();
 
 const App = () => {
   return (
-    <RecoilRoot>
-      <Search />
-    </RecoilRoot>
+    <QueryClientProvider client={queryClient}>
+      <RecoilRoot>
+        <Search />
+        <Weather />
+        <ReactQueryDevtools />
+      </RecoilRoot>
+    </QueryClientProvider>
   );
 };
 
-export default hot(App);
+export default App;

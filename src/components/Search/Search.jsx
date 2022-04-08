@@ -1,22 +1,20 @@
 import React from 'react';
 import { useRecoilState } from 'recoil';
+import { useQuery } from 'react-query';
 import { zipCode as zipCodeAtom } from '../../atoms/zipCode.jsx';
+import { zipCodeInput as zipCodeInputAtom } from '../../atoms/zipCodeInput.jsx';
 import { getFiveDayForecast } from '../../api';
-
 import { MenuItem, TextField, Button, Box, Paper } from '@material-ui/core';
 
 const Search = () => {
   const [zipCode, setZipCode] = useRecoilState(zipCodeAtom);
+  const [zipCodeInput, setZipCodeInput] = useRecoilState(zipCodeInputAtom);
 
   const onSubmit = (e) => {
     e.preventDefault();
-    if (!zipCode || zipCode === '') return;
-    getFiveDayForecast(zipCode)
-      .then(({ data }) =>
-        console.log(data.DailyForecasts, '<<<<><><<><><><><><><<><<><><')
-      )
-      .catch((err) => console.log(err));
-    setZipCode('');
+    if (!zipCodeInput || zipCodeInput === '') return;
+    setZipCode(zipCodeInput);
+    setZipCodeInput('');
   };
 
   return (
@@ -34,8 +32,8 @@ const Search = () => {
             id='zip-code'
             label='Zip Code'
             variant='filled'
-            onChange={(e) => setZipCode(e.target.value)}
-            value={zipCode}
+            onChange={(e) => setZipCodeInput(e.target.value)}
+            value={zipCodeInput}
           />
           <Button variant='contained' onClick={onSubmit}>
             Submit
