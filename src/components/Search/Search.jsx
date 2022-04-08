@@ -1,8 +1,9 @@
 import React from 'react';
 import { useRecoilState } from 'recoil';
 import { zipCode as zipCodeAtom } from '../../atoms/zipCode.jsx';
+import { getFiveDayForecast } from '../../api';
+
 import { MenuItem, TextField, Button, Box, Paper } from '@material-ui/core';
-import { getKey } from '../../api';
 
 const Search = () => {
   const [zipCode, setZipCode] = useRecoilState(zipCodeAtom);
@@ -10,11 +11,12 @@ const Search = () => {
   const onSubmit = (e) => {
     e.preventDefault();
     if (!zipCode || zipCode === '') return;
-    console.log(zipCode, '<<<<<<<');
+    getFiveDayForecast(zipCode)
+      .then(({ data }) =>
+        console.log(data.DailyForecasts, '<<<<><><<><><><><><><<><<><><')
+      )
+      .catch((err) => console.log(err));
     setZipCode('');
-    getKey(zipCode)
-      .then((data) => console.log(data))
-      .catch((err) => console.log(error));
   };
 
   return (

@@ -1,5 +1,11 @@
 # weather-app
 
+## Setup
+
+- npm install
+- create .env file with api key
+- npm start
+
 ## task
 
 1. Setup a new public repo on GitHub
