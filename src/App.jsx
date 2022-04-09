@@ -3,7 +3,7 @@ import { RecoilRoot } from 'recoil';
 import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import Search from './components/Search/Search.jsx';
-import Weather from './components/Weather.jsx/WeatherList.jsx';
+import Weather from './components/Weather/WeatherList.jsx';
 
 const queryClient = new QueryClient();
 
