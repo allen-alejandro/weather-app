@@ -24,23 +24,34 @@ const Weather = () => {
   if (error) return 'An error has occurred: ' + error.message;
 
   return (
-    <Box
-      sx={{
-        display: 'flex',
-        justifyContent: 'center',
-        gap: '1vw',
-        padding: '5vw',
+    <Paper
+      elevation={3}
+      style={{
+        maxWidth: '80vw',
+        margin: 'auto',
+        padding: '1em',
+        borderRadius: '1em',
       }}
     >
-      {data.DailyForecasts.map((day) => (
-        <WeatherItem
-          key={day.Date + day.EpocDate}
-          maxTemp={day.Temperature.Maximum.Value}
-          date={day.Date}
-          icon={day.Day.Icon}
-        />
-      ))}
-    </Box>
+      <h2>Next 5 days...</h2>
+      <Box
+        sx={{
+          display: 'flex',
+          flexFlow: 'row wrap',
+          justifyContent: 'space-around',
+          margin: 'auto',
+        }}
+      >
+        {data.DailyForecasts.map((day) => (
+          <WeatherItem
+            key={day.Date + day.EpocDate}
+            maxTemp={day.Temperature.Maximum.Value}
+            date={day.Date}
+            icon={day.Day.Icon}
+          />
+        ))}
+      </Box>
+    </Paper>
   );
 };
 
