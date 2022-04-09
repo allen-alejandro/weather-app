@@ -19,27 +19,25 @@ const Search = () => {
 
   return (
     <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-      <Paper elevation={3}>
-        <Box
-          sx={{
-            display: 'flex',
-            justifyContent: 'center',
-            gap: '1vw',
-            padding: '5vw',
-          }}
-        >
-          <TextField
-            id='zip-code'
-            label='Zip Code'
-            variant='filled'
-            onChange={(e) => setZipCodeInput(e.target.value)}
-            value={zipCodeInput}
-          />
-          <Button variant='contained' onClick={onSubmit}>
-            Submit
-          </Button>
-        </Box>
-      </Paper>
+      <Box
+        sx={{
+          display: 'flex',
+          justifyContent: 'center',
+          gap: '1vw',
+          padding: '5vw',
+        }}
+      >
+        <TextField
+          id='zip-code'
+          label='Zip Code'
+          variant='filled'
+          onChange={(e) => setZipCodeInput(e.target.value)}
+          value={zipCodeInput}
+        />
+        <Button variant='contained' onClick={onSubmit}>
+          Submit
+        </Button>
+      </Box>
     </Box>
   );
 };
