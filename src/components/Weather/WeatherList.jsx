@@ -3,7 +3,16 @@ import { useRecoilState } from 'recoil';
 import { useQuery } from 'react-query';
 import { zipCode as zipCodeAtom } from '../../atoms/zipCode.jsx';
 import { getFiveDayForecast } from '../../api';
-import { MenuItem, TextField, Button, Box, Paper } from '@material-ui/core';
+import { getTenDayForecast } from '../../api';
+
+import {
+  MenuItem,
+  TextField,
+  Button,
+  Box,
+  Paper,
+  Typography,
+} from '@material-ui/core';
 import WeatherItem from './WeatherItem.jsx';
 import fakeData from '../../../fakeData/fakeData.js';
 
@@ -29,8 +38,14 @@ const Weather = () => {
   const { isIdle, isLoading, error, data, isFetching } = useQuery(
     ['repoData', zipCode],
     () => {
-      // return getFiveDayForecast(zipCode).then(({ data }) => data);
-      return fakeData;
+      return getFiveDayForecast(zipCode).then(({ data }) => {
+        data.DailyForecasts = data.DailyForecasts.slice(0, 7);
+        return data;
+      });
+
+      // fake data to below
+      // fakeData.DailyForecasts = fakeData.DailyForecasts.slice(0, 7);
+      // return fakeData;
     },
     { enabled: !!zipCode }
   );
@@ -49,7 +64,10 @@ const Weather = () => {
       }}
       className={classes.root}
     >
-      <h2>Next 5 days...</h2>
+      <Typography variant='h4' color='inherit' gutterBottom={true}>
+        Next 7 days...
+      </Typography>
+
       <Box
         sx={{
           display: 'flex',
@@ -60,7 +78,7 @@ const Weather = () => {
       >
         {data.DailyForecasts.map((day) => (
           <WeatherItem
-            key={day.Date + day.EpocDate}
+            key={day.Date + day.EpochDate}
             maxTemp={day.Temperature.Maximum.Value}
             date={day.Date}
             icon={day.Day.Icon}

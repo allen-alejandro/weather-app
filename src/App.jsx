@@ -4,9 +4,10 @@ import { QueryClient, QueryClientProvider } from 'react-query';
 import { ReactQueryDevtools } from 'react-query/devtools';
 import Search from './components/Search/Search.jsx';
 import Weather from './components/Weather/WeatherList.jsx';
-
 import { createTheme, ThemeProvider, styled } from '@mui/material/styles';
+import { Typography } from '@material-ui/core';
 import { yellow } from '@mui/material/colors';
+import '@fontsource/roboto';
 
 const theme = createTheme({
   palette: {
@@ -33,7 +34,7 @@ const App = () => {
     <QueryClientProvider client={queryClient}>
       <RecoilRoot>
         <ThemeProvider theme={theme}>
-          <h1>Weather App</h1>
+          <Typography variant='h2'>Weather App</Typography>
           <Search />
           <Weather />
         </ThemeProvider>
