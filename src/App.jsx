@@ -38,7 +38,6 @@ const App = () => {
           <Search />
           <Weather />
         </ThemeProvider>
-        <ReactQueryDevtools />
       </RecoilRoot>
     </QueryClientProvider>
   );
