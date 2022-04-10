@@ -4,9 +4,9 @@ import { useQuery } from 'react-query';
 import { zipCode as zipCodeAtom } from '../../atoms/zipCode.jsx';
 import { zipCodeInput as zipCodeInputAtom } from '../../atoms/zipCodeInput.jsx';
 import { getFiveDayForecast } from '../../api';
-import { MenuItem, TextField, Button, Box, Paper } from '@material-ui/core';
-
+import { TextField, Button, Box } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
+
 const useStyles = makeStyles((theme) => ({
   root: {
     '& .MuiFilledInput-root': {
@@ -57,9 +57,6 @@ const Search = () => {
           onKeyDown={onKeyDown}
           value={zipCodeInput}
           className={classes.root}
-          sx={{
-            background: 'rgb(232, 241, 250)',
-          }}
         />
         <Button
           variant='contained'

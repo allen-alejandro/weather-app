@@ -1,19 +1,24 @@
-# weather-app
+# Weather App
 
-## Setup
+## Installation
 
-- npm install
-- create .env file with api key
-- npm start
+**\*Note**: You will need to supply valid keys for the Accuweather api.\*
 
-## task
+1. Rename `.example.env` to `.env`—add your key to this file.
+2. Run `npm install` from the root directory
+3. Run `npm run build-dev` to build webpack
+4. Run `npm start` to start the server
+5. Navigate a browser to `http://localhost:3000`
+6. Have fun
 
-1. Setup a new public repo on GitHub
-2. Create a new react app
-3. Add mui https://mui.com/ for styling and components
-4. Add recoil https://recoiljs.org/ for state management
-5. Add react-query https://react-query.tanstack.com/ for xhr
-6. Create a component with a text box that accepts a zip code
-7. Take that zip code and figure out how to generate a call to the appropriate api on https://developer.accuweather.com/
-8. Display the data returned as a 7 day forecast
-9. Push all code to GitHub and share the link with me.
+## PLEASE NOTE:
+
+- Accuweather free api only returns 5 day forecast
+- This app assumes you have the free tier and shows a 5 day forecast
+- To display 7 days worth of forecasts, you must pay for the Prime tier
+
+### If you have the Prime tier, update the following:
+
+1. Navigate to `src/components/Weather/WeatherList.jsx`
+2. Jump to line `33`
+3. Replace `getFiveDayForecast` with `getTenDayForecast`

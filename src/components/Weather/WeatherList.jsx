@@ -2,12 +2,11 @@ import React from 'react';
 import { useRecoilState } from 'recoil';
 import { useQuery } from 'react-query';
 import { zipCode as zipCodeAtom } from '../../atoms/zipCode.jsx';
+import { Box, Paper, Typography } from '@material-ui/core';
+import { makeStyles } from '@material-ui/core/styles';
+import WeatherItem from './WeatherItem.jsx';
 import { getFiveDayForecast } from '../../api';
 import { getTenDayForecast } from '../../api';
-import { Box, Paper, Typography } from '@material-ui/core';
-import WeatherItem from './WeatherItem.jsx';
-import { makeStyles } from '@material-ui/core/styles';
-import fakeData from '../../../fakeData/fakeData.js';
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -34,10 +33,6 @@ const Weather = () => {
         data.DailyForecasts = data.DailyForecasts.slice(0, 7);
         return data;
       });
-
-      // fake data to below
-      // fakeData.DailyForecasts = fakeData.DailyForecasts.slice(0, 7);
-      // return fakeData;
     },
     { enabled: !!zipCode }
   );
@@ -78,12 +73,12 @@ const Weather = () => {
           margin: 'auto',
         }}
       >
-        {data.DailyForecasts.map((day) => (
+        {data.DailyForecasts.map(({ Date, EpochDate, Temperature, Day }) => (
           <WeatherItem
-            key={day.Date + day.EpochDate}
-            maxTemp={day.Temperature.Maximum.Value}
-            date={day.Date}
-            icon={day.Day.Icon}
+            key={Date + EpochDate}
+            maxTemp={Temperature.Maximum.Value}
+            date={Date}
+            icon={Day.Icon}
           />
         ))}
       </Box>
