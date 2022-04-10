@@ -4,7 +4,7 @@
 
 **\*Note**: You will need to supply valid keys for the Accuweather api.\*
 
-1. Copy `.example.env` and rename to `.env`—add your key to this file.
+1. Rename `.example.env` to `.env`—add your key to this file.
 2. Run `npm install` from the root directory
 3. Run `npm run build-dev` to build webpack
 4. Run `npm start` to start the server
