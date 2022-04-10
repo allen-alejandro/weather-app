@@ -26,6 +26,13 @@ const Search = () => {
     setZipCodeInput('');
   };
 
+  const onInputChange = (e) => {
+    const reg = /^[0-9\b]+$/;
+    if (e.target.value === '' || reg.test(e.target.value)) {
+      setZipCodeInput(e.target.value);
+    }
+  };
+
   const onKeyDown = (e) => {
     if (e.key === 'Enter') {
       onSubmit();
@@ -46,7 +53,7 @@ const Search = () => {
           id='zip-code'
           label='Zip Code'
           variant='filled'
-          onChange={(e) => setZipCodeInput(e.target.value)}
+          onChange={onInputChange}
           onKeyDown={onKeyDown}
           value={zipCodeInput}
           className={classes.root}

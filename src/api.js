@@ -4,7 +4,6 @@ const baseurl = 'http://dataservice.accuweather.com/';
 const zipCodeUrl = 'locations/v1/postalcodes/US/search/?q=';
 const fiveDayUrl = 'forecasts/v1/daily/5day/';
 const tenDayUrl = 'forecasts/v1/daily/10day/';
-
 const apikey = process.env.ACCUWEATHER_API;
 
 const getKey = (zipCode) => {

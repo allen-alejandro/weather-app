@@ -4,19 +4,11 @@ import { useQuery } from 'react-query';
 import { zipCode as zipCodeAtom } from '../../atoms/zipCode.jsx';
 import { getFiveDayForecast } from '../../api';
 import { getTenDayForecast } from '../../api';
-
-import {
-  MenuItem,
-  TextField,
-  Button,
-  Box,
-  Paper,
-  Typography,
-} from '@material-ui/core';
+import { Box, Paper, Typography } from '@material-ui/core';
 import WeatherItem from './WeatherItem.jsx';
+import { makeStyles } from '@material-ui/core/styles';
 import fakeData from '../../../fakeData/fakeData.js';
 
-import { makeStyles } from '@material-ui/core/styles';
 const useStyles = makeStyles((theme) => ({
   root: {
     [theme.breakpoints.down('sm')]: {
@@ -51,8 +43,18 @@ const Weather = () => {
   );
 
   if (isIdle) return '';
-  if (isLoading) return 'Loading...';
-  if (error) return 'An error has occurred: ' + error.message;
+  if (isLoading)
+    return (
+      <Typography variant='h6' color='inherit' align='center'>
+        Loading...
+      </Typography>
+    );
+  if (error)
+    return (
+      <Typography variant='h3' color='inherit' align='center'>
+        Please Try Again...
+      </Typography>
+    );
 
   return (
     <Paper
