@@ -34,10 +34,6 @@ const Weather = () => {
         data.DailyForecasts = data.DailyForecasts.slice(0, 7);
         return data;
       });
-
-      // fake data to below
-      // fakeData.DailyForecasts = fakeData.DailyForecasts.slice(0, 7);
-      // return fakeData;
     },
     { enabled: !!zipCode }
   );
