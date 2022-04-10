@@ -1,5 +1,6 @@
 import React from 'react';
 import { Box } from '@material-ui/core';
+import { Typography } from '@material-ui/core';
 
 const WeatherItem = ({ maxTemp, date, icon }) => {
   let iconSvg = require(`../../assets/${icon}.svg`);
@@ -15,9 +16,13 @@ const WeatherItem = ({ maxTemp, date, icon }) => {
         textAlign: 'center',
       }}
     >
-      <span>{day}</span>
+      <Typography variant='body1' color='inherit'>
+        {day}
+      </Typography>
       <img src={iconSvg} />
-      <span>{maxTemp}</span>
+      <Typography variant='body1' color='inherit'>
+        {maxTemp}
+      </Typography>
     </Box>
   );
 };

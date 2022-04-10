@@ -168,7 +168,7 @@ let fiveDayData = {
     },
     {
       Date: '2022-04-12T07:00:00-05:00',
-      EpochDate: 1649764800,
+      EpochDate: 1649764802,
       Temperature: {
         Minimum: {
           Value: 71.0,
@@ -202,7 +202,109 @@ let fiveDayData = {
     },
     {
       Date: '2022-04-12T07:00:00-05:00',
-      EpochDate: 1649764800,
+      EpochDate: 1649764801,
+      Temperature: {
+        Minimum: {
+          Value: 71.0,
+          Unit: 'F',
+          UnitType: 18,
+        },
+        Maximum: {
+          Value: 79.0,
+          Unit: 'F',
+          UnitType: 18,
+        },
+      },
+      Day: {
+        Icon: 15,
+        IconPhrase: 'Thunderstorms',
+        HasPrecipitation: true,
+        PrecipitationType: 'Rain',
+        PrecipitationIntensity: 'Moderate',
+      },
+      Night: {
+        Icon: 15,
+        IconPhrase: 'Thunderstorms',
+        HasPrecipitation: true,
+        PrecipitationType: 'Rain',
+        PrecipitationIntensity: 'Moderate',
+      },
+      Sources: ['AccuWeather'],
+      MobileLink:
+        'http://www.accuweather.com/en/us/houston-tx/77002/daily-weather-forecast/33484_pc?day=5&lang=en-us',
+      Link: 'http://www.accuweather.com/en/us/houston-tx/77002/daily-weather-forecast/33484_pc?day=5&lang=en-us',
+    },
+    {
+      Date: '2022-04-12T07:00:00-05:00',
+      EpochDate: 1649764805,
+      Temperature: {
+        Minimum: {
+          Value: 71.0,
+          Unit: 'F',
+          UnitType: 18,
+        },
+        Maximum: {
+          Value: 79.0,
+          Unit: 'F',
+          UnitType: 18,
+        },
+      },
+      Day: {
+        Icon: 15,
+        IconPhrase: 'Thunderstorms',
+        HasPrecipitation: true,
+        PrecipitationType: 'Rain',
+        PrecipitationIntensity: 'Moderate',
+      },
+      Night: {
+        Icon: 15,
+        IconPhrase: 'Thunderstorms',
+        HasPrecipitation: true,
+        PrecipitationType: 'Rain',
+        PrecipitationIntensity: 'Moderate',
+      },
+      Sources: ['AccuWeather'],
+      MobileLink:
+        'http://www.accuweather.com/en/us/houston-tx/77002/daily-weather-forecast/33484_pc?day=5&lang=en-us',
+      Link: 'http://www.accuweather.com/en/us/houston-tx/77002/daily-weather-forecast/33484_pc?day=5&lang=en-us',
+    },
+    {
+      Date: '2022-04-12T07:00:00-05:00',
+      EpochDate: 1649764806,
+      Temperature: {
+        Minimum: {
+          Value: 71.0,
+          Unit: 'F',
+          UnitType: 18,
+        },
+        Maximum: {
+          Value: 79.0,
+          Unit: 'F',
+          UnitType: 18,
+        },
+      },
+      Day: {
+        Icon: 15,
+        IconPhrase: 'Thunderstorms',
+        HasPrecipitation: true,
+        PrecipitationType: 'Rain',
+        PrecipitationIntensity: 'Moderate',
+      },
+      Night: {
+        Icon: 15,
+        IconPhrase: 'Thunderstorms',
+        HasPrecipitation: true,
+        PrecipitationType: 'Rain',
+        PrecipitationIntensity: 'Moderate',
+      },
+      Sources: ['AccuWeather'],
+      MobileLink:
+        'http://www.accuweather.com/en/us/houston-tx/77002/daily-weather-forecast/33484_pc?day=5&lang=en-us',
+      Link: 'http://www.accuweather.com/en/us/houston-tx/77002/daily-weather-forecast/33484_pc?day=5&lang=en-us',
+    },
+    {
+      Date: '2022-04-12T07:00:00-05:00',
+      EpochDate: 1649764807,
       Temperature: {
         Minimum: {
           Value: 71.0,
