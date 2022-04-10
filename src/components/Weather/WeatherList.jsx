@@ -5,8 +5,7 @@ import { zipCode as zipCodeAtom } from '../../atoms/zipCode.jsx';
 import { Box, Paper, Typography } from '@material-ui/core';
 import { makeStyles } from '@material-ui/core/styles';
 import WeatherItem from './WeatherItem.jsx';
-import { getFiveDayForecast } from '../../api';
-import { getTenDayForecast } from '../../api';
+import { getFiveDayForecast, getTenDayForecast } from '../../api';
 
 const useStyles = makeStyles((theme) => ({
   root: {
