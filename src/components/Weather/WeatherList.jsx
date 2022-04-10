@@ -61,7 +61,7 @@ const Weather = () => {
       className={classes.root}
     >
       <Typography variant='h4' color='inherit' gutterBottom={true}>
-        Next 7 days...
+        Next 5 days...
       </Typography>
 
       <Box

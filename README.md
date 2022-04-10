@@ -22,3 +22,5 @@
 1. Navigate to `src/components/Weather/WeatherList.jsx`
 2. Jump to line `31`
 3. Replace `getFiveDayForecast` with `getTenDayForecast`
+4. Jump to line `64`
+5. Replace `Next 5 days...` with ``Next 7 days...`
