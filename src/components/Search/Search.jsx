@@ -6,15 +6,30 @@ import { zipCodeInput as zipCodeInputAtom } from '../../atoms/zipCodeInput.jsx';
 import { getFiveDayForecast } from '../../api';
 import { MenuItem, TextField, Button, Box, Paper } from '@material-ui/core';
 
+import { makeStyles } from '@material-ui/core/styles';
+const useStyles = makeStyles((theme) => ({
+  root: {
+    '& .MuiFilledInput-root': {
+      background: 'white',
+    },
+  },
+}));
+
 const Search = () => {
+  const classes = useStyles();
   const [zipCode, setZipCode] = useRecoilState(zipCodeAtom);
   const [zipCodeInput, setZipCodeInput] = useRecoilState(zipCodeInputAtom);
 
   const onSubmit = (e) => {
-    e.preventDefault();
     if (!zipCodeInput || zipCodeInput === '') return;
     setZipCode(zipCodeInput);
     setZipCodeInput('');
+  };
+
+  const onKeyDown = (e) => {
+    if (e.key === 'Enter') {
+      onSubmit();
+    }
   };
 
   return (
@@ -32,9 +47,19 @@ const Search = () => {
           label='Zip Code'
           variant='filled'
           onChange={(e) => setZipCodeInput(e.target.value)}
+          onKeyDown={onKeyDown}
           value={zipCodeInput}
+          className={classes.root}
+          sx={{
+            background: 'rgb(232, 241, 250)',
+          }}
         />
-        <Button variant='contained' onClick={onSubmit}>
+        <Button
+          variant='contained'
+          onClick={onSubmit}
+          color='primary'
+          type='submit'
+        >
           Submit
         </Button>
       </Box>

@@ -7,7 +7,23 @@ import { MenuItem, TextField, Button, Box, Paper } from '@material-ui/core';
 import WeatherItem from './WeatherItem.jsx';
 import fakeData from '../../../fakeData/fakeData.js';
 
+import { makeStyles } from '@material-ui/core/styles';
+const useStyles = makeStyles((theme) => ({
+  root: {
+    [theme.breakpoints.down('sm')]: {
+      maxWidth: '80vw',
+    },
+    [theme.breakpoints.up('md')]: {
+      maxWidth: '55vw',
+    },
+    [theme.breakpoints.up('lg')]: {
+      maxWidth: '45vw',
+    },
+  },
+}));
+
 const Weather = () => {
+  const classes = useStyles();
   const [zipCode, setZipCode] = useRecoilState(zipCodeAtom);
 
   const { isIdle, isLoading, error, data, isFetching } = useQuery(
@@ -27,11 +43,11 @@ const Weather = () => {
     <Paper
       elevation={3}
       style={{
-        maxWidth: '80vw',
         margin: 'auto',
         padding: '1em',
         borderRadius: '1em',
       }}
+      className={classes.root}
     >
       <h2>Next 5 days...</h2>
       <Box
