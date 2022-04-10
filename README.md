@@ -20,5 +20,5 @@
 ### If you have the Prime tier, update the following:
 
 1. Navigate to `src/components/Weather/WeatherList.jsx`
-2. Jump to line `33`
+2. Jump to line `32`
 3. Replace `getFiveDayForecast` with `getTenDayForecast`
