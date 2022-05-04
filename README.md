@@ -1,8 +1,20 @@
 # Weather App
 
+_A simple weather application. Takes a zip code and returns weather forecast._
+
+## Technologies used
+
+- Recoil (for state management)
+- React-Query (for xhr)
+- Express
+- React
+- Material UI
+- Webpack
+- Babel
+
 ## Installation
 
-**\*Note**: You will need to supply valid keys for the Accuweather api.\*
+**\*Note**: You will need to supply valid keys for the [Accuweather api](https://developer.accuweather.com/).\*
 
 1. Rename `.example.env` to `.env`—add your key to this file.
 2. Run `npm install` from the root directory
